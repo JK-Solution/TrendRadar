@@ -459,6 +459,20 @@ custom:
   # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   periods:
 
+    morning_push:
+      name: "上午推送"
+      start: "11:00"
+      end: "12:00"
+      push: true
+      report_mode: "current"
+
+    afternoon_push:
+      name: "下午推送"
+      start: "17:00"
+      end: "18:00"
+      push: true
+      report_mode: "current"
+
     deep_quiet:
       name: "深夜静默"
       start: "23:00"
@@ -514,10 +528,8 @@ custom:
   # 然后在第 3 步的 week_map 中分配给不同的星期。
   # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   day_plans:
-    workday:                       # 工作日计划
-      periods: ["deep_quiet", "weekday_morning", "evening_summary"]
-    weekend:                       # 周末计划（用 weekend_morning 替换 weekday_morning）
-      periods: ["deep_quiet", "weekend_morning", "evening_summary"]
+    all_day:                       # 每天计划
+      periods: ["morning_push", "afternoon_push"]
 
 
   # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -526,13 +538,13 @@ custom:
   # 1=周一  2=周二  3=周三  4=周四  5=周五  6=周六  7=周日
   # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   week_map:
-    1: "workday"                   # 周一 → 工作日计划
-    2: "workday"                   # 周二
-    3: "workday"                   # 周三
-    4: "workday"                   # 周四
-    5: "workday"                   # 周五
-    6: "weekend"                   # 周六 → 周末计划
-    7: "weekend"                   # 周日
+    1: "all_day"                   # 周一
+    2: "all_day"                   # 周二
+    3: "all_day"                   # 周三
+    4: "all_day"                   # 周四
+    5: "all_day"                   # 周五
+    6: "all_day"                   # 周六
+    7: "all_day"                   # 周日
 
 
   # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
